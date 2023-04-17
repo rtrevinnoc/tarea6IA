@@ -62,6 +62,13 @@ class Experiment:
         fig.suptitle(f'Resultados de Ejecucion de algoritmo genetico (optimo: {self.optimum})')
         plt.show()
 
+        plt.plot([str(step) for step in self.steps], self.avgTimesPerStep, label="Tiempo de ejecucion promedio (s)")
+
+        plt.xlabel("Tamaño de Poblacion")
+        plt.ylabel("Tiempo de Ejecucion Promedio (s)")
+        plt.legend()
+        plt.show()
+
 class Knapsack:
     def __init__(self, problemPath: str) -> None:
         with open(f'./problems/{problemPath}') as file:
